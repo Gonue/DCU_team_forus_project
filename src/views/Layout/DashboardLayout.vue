@@ -6,7 +6,7 @@
         <sidebar-item
           :link="{
             name: '프로젝트',
-            path: '/dashboard',
+            path: '/projectmain',
             icon: 'ni ni-tv-2 text-primary',
           }"
         >
