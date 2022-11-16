@@ -29,7 +29,7 @@
 
       <sidebar-item :link="{
         name: ' 마이페이지',
-        path: '/icons',
+        path: '/mypage',
         icon: 'ni ni-planet text-blue'
       }">
       </sidebar-item>

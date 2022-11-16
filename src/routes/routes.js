@@ -22,7 +22,7 @@ const routes = [
       { path: '/history',name: '업무 히스토리',component: () => import(/* webpackChunkName: "demo" */ '../views/ProjectHistory.vue')},
       { path: '/personAddress',name: '담당자 연락처',component: () => import(/* webpackChunkName: "demo" */ '../views/ProjectPersonAddress.vue')},
 
-      { path: '/mypage',name: '담당자 연락처',component: () => import(/* webpackChunkName: "demo" */ '../views/ProjectPersonAddress.vue')},
+      { path: '/mypage',name: '마이페이지',component: () => import(/* webpackChunkName: "demo" */ '../views/Mypage.vue')},
 
       //admin
       { path: '/projectcreate',name: '프로젝트 생성',component: () => import(/* webpackChunkName: "demo" */ '../views/AdminProjectCreate.vue')},

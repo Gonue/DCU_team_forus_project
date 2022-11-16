@@ -16,8 +16,8 @@
               <h3 slot="header" class="mb-0">주소록</h3>
               
                 <!--여기입니당 ㅋㅋ -->
-  
-                <project-card></project-card>
+
+                <Mypage></Mypage>
               
             </card>
           </b-col>
@@ -30,7 +30,7 @@
     import VueClipboard from 'vue-clipboard2'
     import BaseHeader from '@/components/BaseHeader';
   import Diary from '../components/Tabs/Diary.vue';
-import ProjectCard from '../components/projectCard.vue';
+import Mypage from '../components/Mypage.vue';
   
     Vue.use(VueClipboard)
     export default {
@@ -38,7 +38,7 @@ import ProjectCard from '../components/projectCard.vue';
       components: {
         BaseHeader,
           Diary,
-            ProjectCard
+            Mypage
       },
       methods: {
         onCopy() {

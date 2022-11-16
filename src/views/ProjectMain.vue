@@ -1,12 +1,10 @@
 <template>
   <div>
-       <!-- BootstrapVue Done -->
-       <base-header class="pb-6 pb-8 pt-5 pt-md-8 bg-gradient-success">
-
+    <!-- BootstrapVue Done -->
+    <base-header class="pb-6 pb-8 pt-5 pt-md-8 bg-gradient-success">
       <!-- Card stats -->
       <b-row>
-        <b-col xl="3" md="6">
-        </b-col>
+        <b-col xl="3" md="6"> </b-col>
       </b-row>
     </base-header>
 
@@ -15,11 +13,10 @@
         <b-col>
           <card header-classes="bg-transparent">
             <h3 slot="header" class="mb-0">주소록</h3>
-            
-              <!--여기입니당 ㅋㅋ --> 
 
-              <diary></diary>
-            
+            <!--여기입니당 ㅋㅋ -->
+
+            <project-list></project-list>
           </card>
         </b-col>
       </b-row>
@@ -27,26 +24,29 @@
   </div>
 </template>
 <script>
-  import Vue from 'vue'
-  import VueClipboard from 'vue-clipboard2'
-  import BaseHeader from '@/components/BaseHeader';
-import Diary from '../components/Tabs/Diary.vue';
+import Vue from "vue";
+import VueClipboard from "vue-clipboard2";
+import BaseHeader from "@/components/BaseHeader";
+import ProjectCard from "@/components/projectCard.vue";
+import ProjectList from '../components/projectList.vue';
 
-  Vue.use(VueClipboard)
-  export default {
-    name: 'icons',
-    components: {
-      BaseHeader,
-        Diary
+Vue.use(VueClipboard);
+export default {
+  name: "icons",
+  components: {
+    BaseHeader,
+
+    ProjectCard,
+    ProjectList,
+  },
+  methods: {
+    onCopy() {
+      this.$notify({
+        type: "info",
+        message: "Copied to clipboard",
+      });
     },
-    methods: {
-      onCopy() {
-        this.$notify({
-          type: 'info',
-          message: 'Copied to clipboard'
-        })
-      }
-    }
-  };
+  },
+};
 </script>
 <style></style>
