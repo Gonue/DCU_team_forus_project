@@ -17,8 +17,7 @@
               name: '파일함',
               path: '/icons',
               icon: 'ni ni-box-2 text-blue'
-              }"
-          v-if= true>
+              }">
         </sidebar-item>
 
         <sidebar-item
@@ -31,7 +30,7 @@
         <sidebar-item
               :link="{
                 name: '주소록',
-                path: '/maps',
+                path: '/address',
                 icon: 'ni ni-collection text-orange'
               }">
         </sidebar-item>
@@ -41,28 +40,28 @@
         <sidebar-item
                 :link="{
                   name: '프로젝트 정보',
-                  path: '/tables',
+                  path: '/projectinfo',
                   icon: 'ni ni-bullet-list-67 text-red'
                 }">
         </sidebar-item>
         <sidebar-item
                 :link="{
                   name: '프로젝트 일정',
-                  path: '/tables',
+                  path: '/schedule',
                   icon: 'ni ni-calendar-grid-58 text-blue'
                 }">
         </sidebar-item>
         <sidebar-item
                 :link="{
                   name: '업무 히스토리',
-                  path: '/tables',
+                  path: '/history',
                   icon: 'ni ni-single-copy-04 text-red'
                 }">
         </sidebar-item>
         <sidebar-item
                 :link="{
                   name: '담당자 연락처',
-                  path: '/tables',
+                  path: '/personAddress',
                   icon: 'ni ni-collection text-red'
                 }">
         </sidebar-item>

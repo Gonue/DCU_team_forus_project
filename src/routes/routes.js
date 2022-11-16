@@ -14,8 +14,12 @@ const routes = [
       { path: '/icons', name: '파일함', component: () => import(/* webpackChunkName: "demo" */ '../views/Icons.vue')},
       { path: '/profile',name: 'profile',component: () => import(/* webpackChunkName: "demo" */ '../views/Pages/UserProfile.vue')},
       { path: '/maps',name: 'maps', component: () => import(/* webpackChunkName: "demo" */ '../views/GoogleMaps.vue')},
-      { path: '/tables',name: 'tables',component: () => import(/* webpackChunkName: "demo" */ '../views/RegularTables.vue')},
-      { path: '/tables',name: 'tables',component: () => import(/* webpackChunkName: "demo" */ '../views/RegularTables.vue')}
+      { path: '/address',name: '주소록',component: () => import(/* webpackChunkName: "demo" */ '../views/Address.vue')},
+      { path: '/projectinfo',name: '프로젝트 정보',component: () => import(/* webpackChunkName: "demo" */ '../views/ProjectInfo.vue')},
+      { path: '/schedule',name: '프로젝트 일정',component: () => import(/* webpackChunkName: "demo" */ '../views/ProjectSchedule.vue')},
+      { path: '/history',name: '업무 히스토리',component: () => import(/* webpackChunkName: "demo" */ '../views/ProjectHistory.vue')},
+      { path: '/personAddress',name: '담당자 연락처',component: () => import(/* webpackChunkName: "demo" */ '../views/ProjectPersonAddress.vue')}
+
 
     ] 
   },
