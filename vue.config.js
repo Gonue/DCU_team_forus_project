@@ -22,7 +22,7 @@ module.exports = {
     port: 3000,
     proxy: {
       "/user": {
-        target: "http://3.39.223.65:8080",
+        target: "http://3.35.173.93:8080",
         // changeOrigin: true,
               // pathRewrite: {
               //     '^/': ''

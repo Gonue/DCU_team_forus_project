@@ -4,7 +4,7 @@
       v-model="showMenu"
       :transparent="true"
       menu-classes="justify-content-end"
-      class="navbar-horizontal navbar-main navbar-top navbar-dark"
+      class="navbar-horizontal navbar-main navbar-top navbar"
       expand="lg"
     >
       <div slot="brand" class="navbar-wrapper">
@@ -31,22 +31,12 @@
        </div>
        <!-- 로긴 페이지-->
          <b-navbar-nav  class="align-items-lg-center ml-lg-auto">
-           <b-nav-item to="/dashboard">
-               <i class="ni ni-planet"></i>
-               <span class="nav-link-inner--text">Dashboard</span>
-           </b-nav-item>
-           <b-nav-item to="/register">
-               <i class="ni ni-circle-08"></i>
-               <span class="nav-link-inner--text">Register</span>
-           </b-nav-item>
+          
            <b-nav-item to="/login">
                <i class="ni ni-key-25"></i>
                <span class="nav-link-inner--text">Login</span>
            </b-nav-item>
-           <b-nav-item to="/profile">
-               <i class="ni ni-single-02"></i>
-               <span class="nav-link-inner--text">Profile</span>
-           </b-nav-item>
+
        </b-navbar-nav>
      </template>
     </base-nav>
