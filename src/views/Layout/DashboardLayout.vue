@@ -5,7 +5,7 @@
       <template slot="links">
         <sidebar-item
           :link="{
-            name: 'Dashboard',
+            name: '프로젝트',
             path: '/dashboard',
             icon: 'ni ni-tv-2 text-primary',
           }"
@@ -14,9 +14,9 @@
 
         <sidebar-item
             :link="{
-              name: 'Icons1',
+              name: '파일함',
               path: '/icons',
-              icon: 'ni ni-planet text-blue'
+              icon: 'ni ni-box-2 text-blue'
               }"
           v-if= true>
         </sidebar-item>
@@ -28,38 +28,46 @@
                 icon: 'ni ni-pin-3 text-orange'
               }">
         </sidebar-item>
-
         <sidebar-item
               :link="{
-                name: 'User Profile',
-                path: '/profile',
-                icon: 'ni ni-single-02 text-yellow'
-                }">
+                name: '주소록',
+                path: '/maps',
+                icon: 'ni ni-collection text-orange'
+              }">
         </sidebar-item>
 
+        <hr class="my-3" align="center" style="border: solid 0.3px grey; width: 80%;">
+        <h6 align="center" class="navbar-heading text-muted">프로젝트</h6>
         <sidebar-item
                 :link="{
-                  name: 'Tables',
+                  name: '프로젝트 정보',
                   path: '/tables',
                   icon: 'ni ni-bullet-list-67 text-red'
                 }">
         </sidebar-item>
+        <sidebar-item
+                :link="{
+                  name: '프로젝트 일정',
+                  path: '/tables',
+                  icon: 'ni ni-calendar-grid-58 text-blue'
+                }">
+        </sidebar-item>
+        <sidebar-item
+                :link="{
+                  name: '업무 히스토리',
+                  path: '/tables',
+                  icon: 'ni ni-single-copy-04 text-red'
+                }">
+        </sidebar-item>
+        <sidebar-item
+                :link="{
+                  name: '담당자 연락처',
+                  path: '/tables',
+                  icon: 'ni ni-collection text-red'
+                }">
+        </sidebar-item>
 
-        <sidebar-item
-                  :link="{
-                    name: 'Login',
-                    path: '/login',
-                    icon: 'ni ni-key-25 text-info'
-                  }">
-        </sidebar-item>
-        <sidebar-item
-                  :link="{
-                    name: 'Register',
-                    path: '/register',
-                    icon: 'ni ni-circle-08 text-pink'
-                  }">
-                  
-        </sidebar-item>
+
 
       </template>
 

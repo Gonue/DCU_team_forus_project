@@ -5,17 +5,19 @@ import NotFound from '@/views/NotFoundPage.vue';
 
 const routes = [
   { path: '/', redirect: 'dashboard',component: DashboardLayout, children: [
-      { path: '/dashboard',name: 'dashboard',
+      { path: '/dashboard',name: '프로젝트',
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () => import(/* webpackChunkName: "demo" */ '../views/Dashboard.vue')
       },
-      { path: '/icons', name: 'icons', component: () => import(/* webpackChunkName: "demo" */ '../views/Icons.vue')},
+      { path: '/icons', name: '파일함', component: () => import(/* webpackChunkName: "demo" */ '../views/Icons.vue')},
       { path: '/profile',name: 'profile',component: () => import(/* webpackChunkName: "demo" */ '../views/Pages/UserProfile.vue')},
       { path: '/maps',name: 'maps', component: () => import(/* webpackChunkName: "demo" */ '../views/GoogleMaps.vue')},
+      { path: '/tables',name: 'tables',component: () => import(/* webpackChunkName: "demo" */ '../views/RegularTables.vue')},
       { path: '/tables',name: 'tables',component: () => import(/* webpackChunkName: "demo" */ '../views/RegularTables.vue')}
-    ]
+
+    ] 
   },
   { path: '/', redirect: 'login',component: AuthLayout,
     children: [

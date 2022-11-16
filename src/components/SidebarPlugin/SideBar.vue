@@ -79,37 +79,9 @@
                     <slot name="links">
                     </slot>
                 </ul>
+                <!---->
                 <!--Divider-->
-                <hr class="my-3">
-                <!--Heading-->
-                <h6 class="navbar-heading text-muted">프로젝트</h6>
-                <!--Navigation-->
-                <ul class="navbar-nav mb-md-3">
-                    <li class="nav-item">
-                        <a class="nav-link"
-                           href="/dashboard">
-                            <i class="ni ni-align-center"></i> 프로젝트 정보
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                           href="https://www.creative-tim.com/learning-lab/bootstrap-vue/colors/argon-dashboard">
-                            <i class="ni ni-calendar-grid-58"></i> 프로젝트 일정
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                           href="https://www.creative-tim.com/learning-lab/bootstrap-vue/alerts/argon-dashboard">
-                            <i class="ni ni-air-baloon"></i> 업무히스토리
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                           href="https://www.creative-tim.com/learning-lab/bootstrap-vue/alerts/argon-dashboard">
-                            <i class="ni ni-collection"></i> 담당자 연락처
-                        </a>
-                    </li>
-                </ul>
+                
             </div>
             </div>
     </nav>
