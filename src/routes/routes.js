@@ -4,12 +4,12 @@ import AuthLayout from '@/views/Pages/AuthLayout.vue';
 import NotFound from '@/views/NotFoundPage.vue';
 
 const routes = [
-  { path: '/', redirect: 'dashboard',component: DashboardLayout, children: [
-      { path: '/dashboard',name: '프로젝트',
+  { path: '/', redirect: 'projectmain',component: DashboardLayout, children: [
+      { path: '/projectmain',name: '프로젝트',
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "demo" */ '../views/Dashboard.vue')
+        component: () => import(/* webpackChunkName: "demo" */ '../views/ProjectMain.vue')
       },
 
       //common
@@ -27,8 +27,6 @@ const routes = [
       //admin
       { path: '/projectcreate',name: '프로젝트 생성',component: () => import(/* webpackChunkName: "demo" */ '../views/AdminProjectCreate.vue')},
       { path: '/usermanage',name: '유저 관리',component: () => import(/* webpackChunkName: "demo" */ '../views/AdminUserManageMent.vue')}
-
-
 
     ] 
   },
