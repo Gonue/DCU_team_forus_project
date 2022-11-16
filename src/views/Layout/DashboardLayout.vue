@@ -41,7 +41,7 @@
                 :link="{
                   name: '프로젝트 정보',
                   path: '/projectinfo',
-                  icon: 'ni ni-bullet-list-67 text-red'
+                  icon: 'ni ni-bullet-list-67 text-green'
                 }">
         </sidebar-item>
         <sidebar-item
@@ -55,7 +55,7 @@
                 :link="{
                   name: '업무 히스토리',
                   path: '/history',
-                  icon: 'ni ni-single-copy-04 text-red'
+                  icon: 'ni ni-single-copy-04 text-yellow'
                 }">
         </sidebar-item>
         <sidebar-item

@@ -14,14 +14,14 @@
 
       <sidebar-item :link="{
         name: ' 프로젝트 생성',
-        path: '/icons',
+        path: '/projectcreate',
         icon: 'ni ni-atom text-blue'
       }">
       </sidebar-item>
 
       <sidebar-item :link="{
         name: ' 유저 관리',
-        path: '/icons',
+        path: '/usermanage',
         icon: 'ni ni-single-02 text-blue'
       }">
       </sidebar-item>
@@ -43,9 +43,6 @@
       </sidebar-item>
 
 
-
-
-      <base-dropdown menu-on-right class="nav-item" tag="li" title-tag="a" title-classes="nav-link pr-0">
         <a href="#" class="nav-link pr-0" @click.prevent slot="title-container">
           <b-media no-body class="align-items-center">
             <span class="avatar avatar-sm rounded-circle">
@@ -58,36 +55,7 @@
           </b-media>
         </a>
 
-        <template>
-          <b-dropdown-header class="noti-title">
-            <h6 class="text-overflow m-0">Welcome!</h6>
-          </b-dropdown-header>
-          <b-dropdown-item href="#!">
-            <i class="ni ni-single-02"></i>
-            <span>My profile</span>
-          </b-dropdown-item>
-          <b-dropdown-item href="#!">
-            <i class="ni ni-settings-gear-65"></i>
-            <span>Settings</span>
-          </b-dropdown-item>
-          <b-dropdown-item href="#!">
-            <i class="ni ni-calendar-grid-58"></i>
-            <span>Activity</span>
-          </b-dropdown-item>
-          <b-dropdown-item href="#!">
-            <i class="ni ni-support-16"></i>
-            <span>Support</span>
-          </b-dropdown-item>
-          <div class="dropdown-divider"></div>
-          <b-dropdown-item href="#!">
 
-            <i class="ni ni-user-run"></i>
-            <span>Logout</span>
-
-          </b-dropdown-item>
-
-        </template>
-      </base-dropdown>
     </b-navbar-nav>
   </base-nav>
 </template>
@@ -97,7 +65,6 @@ import { BaseNav, Modal } from '@/components';
 import axios from 'axios';
 import store from '../../routes/store';
 import router from '../../routes/router';
-import DashboardVue from '../Dashboard.vue';
 import SidebarItem from '../../components/SidebarPlugin/SidebarItem.vue';
 
 
