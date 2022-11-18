@@ -9,7 +9,7 @@
       >
         <i class="fas fa-plus"></i> 프로젝트 생성
       </button>
-      <a href="#" class="btn btn-primary"> 프로젝트 생성 </a>
+
       <h1 class="h3 mb-3">Projects</h1>
 
       <div class="row">
@@ -706,12 +706,12 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button
+            <!-- <button
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
-            ></button>
+            ></button> -->
           </div>
           <div class="modal-body">
             <CreateProject />

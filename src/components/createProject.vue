@@ -52,27 +52,27 @@
         disabled
       />
     </div>
-    <button v-on:click="testCkeditor"></button>
+    <!-- <button v-on:click="testCkeditor"></button> -->
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import CKEditor from 'ckeditor4-vue';
-import axiosEnv from '../api/axios.env'
-import axios from 'axios';
+import Vue from "vue";
+import CKEditor from "ckeditor4-vue";
+import axiosEnv from "../api/axios.env";
+import axios from "axios";
 
-Vue.use(CKEditor)
+Vue.use(CKEditor);
 export default {
   name: "ProjectUpdate",
   components: {},
   data() {
     return {
       sampleData: "",
-      editorData:"",
+      editorData: "",
       editorConfig: {
-                    // The configuration of the editor.
-      }
+        // The configuration of the editor.
+      },
     };
   },
   setup() {},
@@ -80,9 +80,9 @@ export default {
   mounted() {},
   unmounted() {},
   methods: {
-    testCkeditor(){
-      console.log(this.editorData)  
-    }
+    testCkeditor() {
+      console.log(this.editorData);
+    },
     //이미지 미리보기
     // readURL(input) {
     //   if (input.files && input.files[0]) {
