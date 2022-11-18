@@ -95,11 +95,11 @@ import router from '../../routes/router';
                 userPassword: "",
             }
         })
+        const BASE_URL = "http://3.35.173.93:8080";
         const submit = () => {
-            axios.post("/user/login", state.form).then((res) => {
-                store.commit('setAccount', res.data);
-                store.commit('token', res.data);
+            axios.post(BASE_URL+"/user/login", state.form).then((res) => {
                 sessionStorage.setItem("id", res.data);
+                sessionStorage.setItem("token", res.headers.authorization);
                 router.push({ path: "/" });
                 window.alert("로그인하였습니다.");
                 
