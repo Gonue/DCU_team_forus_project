@@ -43,14 +43,52 @@
     </div> -->
     <!-- 사진 끝 -->
     <div class="mb-3 mx-3">
-      <label for="formGroupExampleInput2" class="form-label">소속부서</label>
+      <label for="formGroupExampleInput2" class="form-label"
+        >프로젝트 담당자</label
+      >
       <input
         type="text"
         class="form-control"
         id="formGroupExampleInput2"
-        placeholder="개발 부서"
+        placeholder="프로젝트 담당자"
         disabled
       />
+    </div>
+
+    <!-- Modal 1-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <DiaryCheck></DiaryCheck>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- <button v-on:click="testCkeditor"></button> -->
   </div>
@@ -61,11 +99,12 @@ import Vue from "vue";
 import CKEditor from "ckeditor4-vue";
 import axiosEnv from "../api/axios.env";
 import axios from "axios";
+import DiaryCheck from "../components/Tabs/DiaryCheck.vue";
 
 Vue.use(CKEditor);
 export default {
   name: "ProjectUpdate",
-  components: {},
+  components: { DiaryCheck },
   data() {
     return {
       sampleData: "",
