@@ -14,14 +14,13 @@
             <th scope="col">전화번호</th>
           </tr>
         </thead>
-        <tbody>
-          <tr >
-            <!--   <div v-if="address.user_name.includes(searchName)"> -->
-            <td>안녕하세용 ㅋㅋ</td>
-            <td>안녕하세용 ㅋㅋ</td>
-            <td>안녕하세용 ㅋㅋ</td>
-            <td>안녕하세용 ㅋㅋ</td>
-            <td>안녕하세용 ㅋㅋ</td>
+        <tbody v-for="(item, index) in addressBook" :key="index">
+          <tr>
+          <td> {{ item.userName }}</td>
+          <td> {{ item.userGrade }}</td>
+          <td> {{ item.userDepartment }}</td>
+          <td> {{ item.userEmail }}</td>
+          <td> {{ item.userPhoneNumber }}</td>
           </tr>
         </tbody>
       </table>
@@ -32,6 +31,8 @@
   </template>
   
   <script>
+  import axios from 'axios';
+
   export default {
     name: "Diary",
     components: {},
@@ -43,7 +44,33 @@
     },
     setup() {},
     created() {},
-    mounted() {},
+    mounted() {
+    const axiosToken = axios.create({
+      baseURL: process.env.VUE_APP_BASE_URL,
+      headers: {
+        Authorization: sessionStorage.token, // header의 속성
+      },
+    });
+    axiosToken
+      .get("/diary")
+      .then((response) => {
+      
+        for (let i = 0; i <  response.data.length; i++) {
+          this.addressBook.push({
+            userEmail : response.data[i].userEmail,
+            userName : response.data[i].userName,    
+            userDepartment : response.data[i].userDepartment,           
+            userPhoneNumber : response.data[i].userPhoneNumber,
+            userGrade : response.data[i].userGrade,     
+          })
+        }
+      })
+      .catch((ex) => {
+        console.log("error");
+        console.log(ex)
+        return ex;
+      });
+    },
     unmounted() {},
     methods: {
       searchGroup(event) {
