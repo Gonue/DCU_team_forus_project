@@ -46,6 +46,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from '../util/event-utils'
+import axiosEnv from '../api/axios.env'
 
 import axios from 'axios';
 export default {
@@ -83,22 +84,21 @@ data() {
         */
         events: [
         ]
-      }
+      },
     }
   },
   setup() {},
   created() {},
   mounted(){
-  const BASE_URL = "http://3.35.173.93:8080";
   var calData = [];
   const axiosToken = axios.create({
-      baseURL: BASE_URL,
+      baseURL: axiosEnv.BASE_URL,
       headers: {
         Authorization: sessionStorage.token, // header의 속성
       },
     });
     axiosToken
-      .get(BASE_URL + "/calendar/pj-22d3c678-3497-43c9-86a1-08171faa4bac")
+      .get(axiosEnv.BASE_URL + "/calendar/pj-22d3c678-3497-43c9-86a1-08171faa4bac")
       .then((response) => {
         console.log("session ====== ",  sessionStorage.token);
       
@@ -127,15 +127,14 @@ methods: {
       calendarApi.unselect() // clear date selection
       if (title) {
         //캘린더 등록
-        const BASE_URL = "http://3.35.173.93:8080";
         const axiosToken = axios.create({
-        baseURL: BASE_URL,
+        baseURL: axiosEnv.BASE_URL,
         headers: {
           Authorization: sessionStorage.token, // header의 속성
         },
         });
         axiosToken
-          .post(BASE_URL + "/calendar",{
+          .post(axiosEnv.BASE_URL + "/calendar",{
               "calendarTitle" : title,
               "calendarStartDate" : selectInfo.startStr,
               "calendarEndDate" : selectInfo.endStr,
@@ -159,15 +158,14 @@ methods: {
     },
     handleEventClick(clickInfo) {
       if (confirm(`일정을 삭제하시겠습니까? '${clickInfo.event.title}'`)) {
-        const BASE_URL = "http://3.35.173.93:8080";
         const axiosToken = axios.create({
-        baseURL: BASE_URL,
+        baseURL: axiosEnv.BASE_URL,
         headers: {
           Authorization: sessionStorage.token, // header의 속성
         },
         });
         axiosToken
-          .get(BASE_URL + "/calendar/delete/pj-22d3c678-3497-43c9-86a1-08171faa4bac")
+          .get(axiosEnv.BASE_URL + "/calendar/delete/pj-22d3c678-3497-43c9-86a1-08171faa4bac")
           .then((response) => {
             console.log("calendarDelete ====== ", response);
             clickInfo.event.remove()
