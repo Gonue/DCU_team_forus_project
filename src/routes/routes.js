@@ -1,6 +1,5 @@
 import DashboardLayout from '@/views/Layout/DashboardLayout.vue';
 import AuthLayout from '@/views/Pages/AuthLayout.vue';
-
 import NotFound from '@/views/NotFoundPage.vue';
 
 const routes = [
@@ -27,9 +26,9 @@ const routes = [
       //admin
       { path: '/projectcreate',name: '프로젝트 생성',component: () => import(/* webpackChunkName: "demo" */ '../views/AdminProjectCreate.vue')},
       { path: '/usermanage',name: '유저 관리',component: () => import(/* webpackChunkName: "demo" */ '../views/AdminUserManageMent.vue')}
-
     ] 
   },
+
   { path: '/', redirect: 'login',component: AuthLayout,
     children: [
       { path: '/login', name: 'login',component: () => import(/* webpackChunkName: "demo" */ '../views/Pages/Login.vue')},
