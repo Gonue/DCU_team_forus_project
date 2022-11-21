@@ -11,18 +11,18 @@
     </b-navbar-nav>
 
     <b-navbar-nav class="align-items-center ml-auto ml-md-0">
-
+<!--
       <sidebar-item :link="{
         name: ' 프로젝트 생성',
         path: '/projectcreate',
-        icon: 'ni ni-atom text-blue'
+        icon: 'ni ni-atom text-dark'
       }">
       </sidebar-item>
-
+-->
       <sidebar-item :link="{
         name: ' 유저 관리',
         path: '/usermanage',
-        icon: 'ni ni-single-02 text-blue'
+        icon: 'ni ni-single-02 text-dark'
       }">
       </sidebar-item>
 
@@ -30,7 +30,7 @@
       <sidebar-item :link="{
         name: ' 마이페이지',
         path: '/mypage',
-        icon: 'ni ni-planet text-blue'
+        icon: 'ni ni-planet text-dark'
       }">
       </sidebar-item>
       
@@ -38,7 +38,7 @@
       <sidebar-item :link="{
         name: ' 로그인',
         path: '/login',
-        icon: 'ni ni-key-25 text-blue'
+        icon: 'ni ni-key-25 text-dark'
       }" >
       </sidebar-item>
 
