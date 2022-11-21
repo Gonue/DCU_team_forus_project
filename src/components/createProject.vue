@@ -46,13 +46,43 @@
       <label for="formGroupExampleInput2" class="form-label"
         >프로젝트 담당자</label
       >
-      <input
+      <!-- <input
         type="text"
         class="form-control"
         id="formGroupExampleInput2"
-        placeholder="프로젝트 담당자"
+        placeholder="프로젝트 담당자, 프로젝트 담당자
+        프로젝트 담당자, 프로젝트 담당자,프로젝트 담당자,프로젝트 담당자,프로젝트 담당자
+        "
         disabled
-      />
+      /> -->
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"><i class="ni ni-check-bold"></i></th>
+            <th scope="col">이름</th>
+            <th scope="col">직책/직급</th>
+            <th scope="col">부서</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in sampleData" :key="index">
+            <td>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="customCheck1"
+                />
+                <label class="custom-control-label" for="customCheck1"></label>
+              </div>
+            </td>
+            <td>이정훈</td>
+            <td>사원</td>
+            <td>개발</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Modal 1-->
@@ -107,7 +137,7 @@ export default {
   components: { DiaryCheck },
   data() {
     return {
-      sampleData: "",
+      sampleData: [0, 1, 2, 3, 4, 5, 6],
       editorData: "",
       editorConfig: {
         // The configuration of the editor.
