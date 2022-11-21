@@ -15,7 +15,7 @@
         <sidebar-item
             :link="{
               name: '파일함',
-              path: '/icons',
+              path: '/filebox',
               icon: 'ni ni-box-2 text-blue'
               }">
         </sidebar-item>

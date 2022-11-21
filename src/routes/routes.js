@@ -12,7 +12,7 @@ const routes = [
       },
 
       //common
-      { path: '/icons', name: '파일함', component: () => import(/* webpackChunkName: "demo" */ '../views/Icons.vue')},
+      { path: '/filebox', name: '파일함', component: () => import(/* webpackChunkName: "demo" */ '../views/FileBox.vue')},
       { path: '/profile',name: 'profile',component: () => import(/* webpackChunkName: "demo" */ '../views/Pages/UserProfile.vue')},
       { path: '/maps',name: 'maps', component: () => import(/* webpackChunkName: "demo" */ '../views/GoogleMaps.vue')},
       { path: '/address',name: '주소록',component: () => import(/* webpackChunkName: "demo" */ '../views/Address.vue')},
@@ -22,7 +22,6 @@ const routes = [
       { path: '/personAddress',name: '담당자 연락처',component: () => import(/* webpackChunkName: "demo" */ '../views/ProjectPersonAddress.vue')},
 
       { path: '/mypage',name: '마이페이지',component: () => import(/* webpackChunkName: "demo" */ '../views/Mypage.vue')},
-
       //admin
       { path: '/projectcreate',name: '프로젝트 생성',component: () => import(/* webpackChunkName: "demo" */ '../views/AdminProjectCreate.vue')},
       { path: '/usermanage',name: '유저 관리',component: () => import(/* webpackChunkName: "demo" */ '../views/AdminUserManageMent.vue')}

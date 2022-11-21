@@ -13,7 +13,7 @@
       <b-row class="justify-content-center">
         <b-col>
           <card header-classes="bg-transparent">
-            <h3 slot="header" class="mb-0">주소록</h3>
+            <h3 slot="header" class="mb-0">파일함</h3>
             
               <!--여기입니당 ㅋㅋ -->
 
