@@ -76,7 +76,7 @@
     props: {
       logo: {
         type: String,
-        default: 'img/brand/white.png',
+        default: 'img/brand/logo.png',
         description: 'Sidebar app logo'
       },
       autoClose: {
