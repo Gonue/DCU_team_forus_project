@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <link rel="icon" type="image/png" sizes="96x96" href="<%= webpackConfig.output.publicPath %>favicon.png">
+  <meta name="referrer" content="no-referrer" />
+  <link rel="icon" type="image/png" sizes="96x96" href="<%= webpackConfig.output.publicPath %>favicon1.ico">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-  <title>BootstrapVue Argon Dashboard by Creative Tim</title>
+  <title>Forus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
   <!-- Fonts -->
@@ -20,17 +20,18 @@
 <style>
   df-messenger {
     /* 왼쪽 채팅창 배경색 */
---df-messenger-bot-message: #000080;
+--df-messenger-bot-message: #black;
     /* 챗봇아이콘 색깔 */
 --df-messenger-button-titlebar-color: #FFFF00;
+--df-messenger-button-titlebar-font-color: #000;
     /* 채 팅창 뒷배경 색 */
---df-messenger-chat-background-color: #87CEFA;
+--df-messenger-chat-background-color: #ffffff;
     /* 글자색 */
---df-messenger-font-color: white;
+--df-messenger-font-color: black;
     /* 뭐가바뀌는지모르겠음 */
 --df-messenger-send-icon: #orange;
     /* 오른쪽 채팅창 배경색 */
---df-messenger-user-message: #EE82EE;
+--df-messenger-user-message: #ffffff;
 
 }
 </style>
@@ -41,7 +42,6 @@
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"></script>
 
-
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 
     <df-messenger
@@ -50,6 +50,7 @@
       agent-id="b7d33075-2279-4191-902d-8e78435121c8"
       language-code="ko"
       chat-icon="https://lh3.google.com/u/0/d/1hG4O9lgW5y-Tsbb8wcetW0H4LKtHeSbS=w1366-h663-iv1"
+      
     ></df-messenger>
 
 
