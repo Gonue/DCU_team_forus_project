@@ -18,24 +18,14 @@
             <div class="card-header px-4 pt-4">
               <div class="card-actions float-right">
                 <div class="dropdown show">
-                  <a href="#" data-toggle="dropdown" data-display="static">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="feather feather-more-horizontal align-middle"
-                    >
-                      <circle cx="12" cy="12" r="1"></circle>
-                      <circle cx="19" cy="12" r="1"></circle>
-                      <circle cx="5" cy="12" r="1"></circle>
-                    </svg>
-                  </a>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-sm float-right mt-n1"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal5"
+                  >
+                    초대
+                  </button>
 
                   <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="#">Action</a>
@@ -730,13 +720,45 @@
       </div>
     </div>
     <!-- 모달끝 -->
+
+    <!-- 프로젝트 멤버 초대하기 모달 -->
+    <div
+      class="modal fade"
+      id="exampleModal5"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          </div>
+          <div class="modal-body">
+            <InviteProjectMembers />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 프로젝트 멤버 초대하기 모달 끝 -->
   </div>
 </template>
 
 <script>
 import CreateProject from "./createProject.vue";
+import InviteProjectMembers from "./InviteProjectMembers.vue";
 export default {
-  components: { CreateProject },
+  components: { CreateProject, InviteProjectMembers },
   data() {
     return {
       sampleData: "",

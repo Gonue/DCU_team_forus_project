@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div><h2>프로젝트수정</h2></div>
+    <div><h2>프로젝트 생성</h2></div>
     <div class="mb-3 mx-3">
       <label for="formGroupExampleInput" class="form-label">프로젝트이름</label>
       <input
@@ -86,7 +86,7 @@
     </div>
 
     <!-- Modal 1-->
-    <div
+    <!-- <div
       class="modal fade"
       id="exampleModal"
       tabindex="-1"
@@ -119,7 +119,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- <button v-on:click="testCkeditor"></button> -->
   </div>
 </template>
