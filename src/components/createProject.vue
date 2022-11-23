@@ -97,8 +97,6 @@
 <script>
 import Vue from "vue";
 import CKEditor from "ckeditor4-vue";
-import axiosEnv from "../api/axios.env";
-import axios from "axios";
 import DiaryCheck from "../components/Tabs/DiaryCheck.vue";
 
 Vue.use(CKEditor);

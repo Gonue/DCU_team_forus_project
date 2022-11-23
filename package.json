@@ -40,7 +40,9 @@
     "vue-clipboard2": "^0.3.0",
     "vue-flatpickr-component": "^8.1.2",
     "vue-full-calendar": "^2.8.1-0",
+    "vue-html2canvas": "0.0.4",
     "vue-router": "^3.0.6",
+    "vue-signature-pad": "^3.0.2",
     "vue2-transitions": "^0.2.3",
     "vuex": "^4.1.0"
   },

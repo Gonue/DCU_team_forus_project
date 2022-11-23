@@ -102,12 +102,16 @@ data() {
         console.log("session ====== ",  sessionStorage.token);
       
         for (let i = 0; i <  response.data.length; i++) {
+          var colorCode = "#" + Math.round(Math.random() * 0xffffff).toString(16);
           calData.push({
               title  : response.data[i].calendarTitle,
               start  : response.data[i].calendarStartDate,
               end    : response.data[i].calendarEndDate,
+              color  : colorCode
+              
           })
         }
+        console.log(calData)
         this.calendarOptions.events = calData;
       })
       .catch((ex) => {

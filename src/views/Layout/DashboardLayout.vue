@@ -34,6 +34,13 @@
                 icon: 'ni ni-collection text-orange'
               }">
         </sidebar-item>
+        <sidebar-item
+              :link="{
+                name: '보고서작성',
+                path: '/reportCapture',
+                icon: 'ni ni-collection text-orange'
+              }">
+        </sidebar-item>
 
         <hr class="my-3" align="center" style="border: solid 0.3px grey; width: 80%;">
         <h6 align="center" class="navbar-heading text-muted">프로젝트</h6>
