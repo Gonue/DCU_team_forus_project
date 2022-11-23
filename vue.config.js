@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path");
 
 function resolveSrc(_path) {
   return path.join(__dirname, _path);
@@ -10,22 +10,22 @@ module.exports = {
     // Set up all the aliases we use in our app.
     resolve: {
       alias: {
-        assets: resolveSrc('src/assets')
-      }
-    }
+        assets: resolveSrc("src/assets"),
+      },
+    },
   },
   css: {
     // Enable CSS source maps.
-    sourceMap: process.env.NODE_ENV !== 'production'
+    sourceMap: process.env.NODE_ENV !== "production",
   },
   devServer: {
     port: 3000,
     proxy: {
       "/user": {
-        target: "http://3.35.173.93:8080",
+        target: "http://15.165.74.173:8080",
         // changeOrigin: true,
-              // pathRewrite: {
-              //     '^/': ''
+        // pathRewrite: {
+        //     '^/': ''
       },
     },
   },

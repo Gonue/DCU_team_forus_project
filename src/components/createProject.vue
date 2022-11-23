@@ -28,7 +28,7 @@
         >프로젝트 썸네일</label
       >
       <input
-        type="text"
+        type="file"
         class="form-control"
         id="formGroupExampleInput2"
         placeholder="이미지"
@@ -39,7 +39,13 @@
     <!-- <div class="mb-3"><img id="preview" /></div>
     <div class="mb-3">
       <label for="file" class="form-label">상품대표이미지</label>
-      <input type="file" class="form-control" name="file" id="file" onchange="readURL(this);" />
+      <input
+        type="file"
+        class="form-control"
+        name="file"
+        id="file"
+        onchange="readURL(this);"
+      />
     </div> -->
     <!-- 사진 끝 -->
     <div class="mb-3 mx-3">
@@ -69,12 +75,7 @@
           <tr v-for="(item, index) in sampleData" :key="index">
             <td>
               <div class="custom-control custom-checkbox">
-                <input
-                  type="checkbox"
-                  class="custom-control-input"
-                  id="customCheck1"
-                />
-                <label class="custom-control-label" for="customCheck1"></label>
+                <input type="checkbox" />
               </div>
             </td>
             <td>이정훈</td>
@@ -84,43 +85,6 @@
         </tbody>
       </table>
     </div>
-
-    <!-- Modal 1-->
-    <!-- <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <DiaryCheck></DiaryCheck>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- <button v-on:click="testCkeditor"></button> -->
   </div>
 </template>
 
