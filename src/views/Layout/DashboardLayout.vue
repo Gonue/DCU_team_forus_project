@@ -15,11 +15,11 @@
         <sidebar-item
             :link="{
               name: '파일함',
-              path: '/icons',
+              path: '/filebox',
               icon: 'ni ni-box-2 text-blue'
               }">
         </sidebar-item>
-
+        <!--
         <sidebar-item
               :link="{
                 name: 'Maps',
@@ -27,6 +27,7 @@
                 icon: 'ni ni-pin-3 text-orange'
               }">
         </sidebar-item>
+        -->
         <sidebar-item
               :link="{
                 name: '주소록',
