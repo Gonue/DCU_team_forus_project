@@ -95,7 +95,7 @@ import router from '../../routes/router';
                 userPassword: "",
             }
         })
-        const BASE_URL = "http://3.35.173.93:8080";
+        const BASE_URL = process.env.VUE_APP_BASE_URL;
         const submit = () => {
             axios.post(BASE_URL+"/user/login", state.form).then((res) => {
                 sessionStorage.setItem("id", res.data);

@@ -2,19 +2,21 @@
     <div>
       <div class="snippet-body">
         <div class="container mt-5 mb-5">
-          <div class="row d-flex align-items-center justify-content-center">
+
+          <div class="row d-flex align-items-center justify-content-center"  
+          v-for="(item, index) in history" :key="index">
             <div class="col-md-6">
               <div class="card">
                 <div class="d-flex justify-content-between p-2 px-3">
                   <div class="d-flex flex-row align-items-center">
                     <img
-                      src="https://i.imgur.com/UXdKE3o.jpg"
+                     :src="item.writerProfileImage"
                       width="50"
                       class="rounded-circle"
                     />
                     <div class="d-flex flex-column ml-2">
-                      <span class="font-weight-bold">이정훈</span>
-                      <small class="text-primary">Collegues</small>
+                      <span class="font-weight-bold">{{ item.writerDepartment }}</span>
+                      <small class="text-primary">{{ item.writerGrade }}</small>
                     </div>
                   </div>
                   <div class="d-flex flex-row mt-1 ellipsis">
@@ -25,8 +27,7 @@
                 <img src="https://i.imgur.com/xhzhaGA.jpg" class="img-fluid" />
                 <div class="p-2">
                   <p class="text-justify">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt.
+                    {{ item.historyContent }}
                   </p>
                   <hr />
                   <div class="justify-content-between align-items-center">
@@ -124,22 +125,51 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </template>
   
   <script>
+  import axios from "axios";
   export default {
     components: {},
     data() {
       return {
         sampleData: "",
+        history: [], 
       };
     },
     setup() {},
     created() {},
-    mounted() {},
+    mounted() {
+      const axiosToken = axios.create({
+      baseURL: process.env.VUE_APP_BASE_URL,
+      headers: {
+        Authorization: sessionStorage.token, // header의 속성
+      },
+    });
+    axiosToken
+      .get("/history/list/pj-22d3c678-3497-43c9-86a1-08171faa4bac")
+      .then((response) => {
+        for (let i = 0; i < response.data.length; i++) {
+          this.history.push({
+            writerProfileImage: response.data[i].writerProfileImage,
+            writerDepartment: response.data[i].writerDepartment,
+            writerGrade: response.data[i].writerGrade,
+            historyName: response.data[i].historyName,
+            historyContent: response.data[i].historyContent,
+          });
+        }
+        console.log(this.history);
+      })
+      .catch((ex) => {
+        console.log("error");
+        console.log(ex);
+        return ex;
+      });
+    },
     unmounted() {},
     methods: {},
   };
