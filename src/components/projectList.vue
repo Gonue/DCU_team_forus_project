@@ -13,13 +13,16 @@
       <h1 class="h3 mb-3">Projects</h1>
 
       <div class="row">
-        <div class="col-12 col-md-6 col-lg-3" v-for="(item, index) in projectList"
-          :key="index">
+        <div
+          class="col-12 col-md-6 col-lg-3"
+          v-for="(item, index) in projectList"
+          :key="index"
+        >
           <div class="card">
             <img
-            class="card-img-top"
-            alt="Unsplash"
-            :src="item.projectTitleImage"
+              class="card-img-top"
+              alt="Unsplash"
+              :src="item.projectTitleImage"
             />
 
             <div class="card-header px-4 pt-4">
@@ -46,8 +49,8 @@
 
                   <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#">Another Action</a>
+                    <a class="dropdown-item" href="#">Something Else Here</a>
                   </div>
                 </div>
               </div>
@@ -202,7 +205,7 @@ export default {
           this.projectList.push({
             projectName: response.data[i].projectName,
             projectExplanation: response.data[i].projectExplanation,
-            projectTitleImage: response.data[i].projectTitleImage
+            projectTitleImage: response.data[i].projectTitleImage,
           });
         }
         console.log(this.projectList);
