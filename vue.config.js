@@ -3,7 +3,7 @@ const path = require("path");
 function resolveSrc(_path) {
   return path.join(__dirname, _path);
 }
-// vue.config.js
+// vue.config.jsㅇㅇ
 module.exports = {
   lintOnSave: true,
   configureWebpack: {
@@ -21,8 +21,8 @@ module.exports = {
   devServer: {
     port: 3000,
     proxy: {
-      "/user": {
-        target: process.env.VUE_APP_BASE_URL,
+      "/users": {
+        target: "http://15.165.74.173:8080",
         // changeOrigin: true,
         // pathRewrite: {
         //     '^/': ''
