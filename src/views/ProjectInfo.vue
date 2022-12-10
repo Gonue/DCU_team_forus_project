@@ -12,13 +12,13 @@
       <b-row class="justify-content-center">
         <b-col>
           <card header-classes="bg-transparent">
-            <h3 slot="header" class="mb-0">주소록</h3>
-
+            <h3 slot="header" class="mb-0">프로젝트정보</h3>
+            <ProjectInforDetail></ProjectInforDetail>
             <!--여기입니당 ㅋㅋ -->
 
-            <Diary></Diary>
+            <!-- <Diary></Diary>
             <DiaryRadio></DiaryRadio>
-            <DiaryCheck></DiaryCheck>
+            <DiaryCheck></DiaryCheck> -->
           </card>
         </b-col>
       </b-row>
@@ -29,18 +29,20 @@
 import Vue from "vue";
 import VueClipboard from "vue-clipboard2";
 import BaseHeader from "@/components/BaseHeader";
-import Diary from "../components/Tabs/Diary.vue";
-import DiaryRadio from "../components/Tabs/DiaryRadio.vue";
-import DiaryCheck from "../components/Tabs/DiaryCheck.vue";
+import ProjectInforDetail from "@/components/ProjectInfoDetail.vue";
+// import Diary from "../components/Tabs/Diary.vue";
+// import DiaryRadio from "../components/Tabs/DiaryRadio.vue";
+// import DiaryCheck from "../components/Tabs/DiaryCheck.vue";
 
 Vue.use(VueClipboard);
 export default {
   name: "icons",
   components: {
     BaseHeader,
-    Diary,
-    DiaryRadio,
-    DiaryCheck,
+    ProjectInforDetail,
+    // Diary,
+    // DiaryRadio,
+    // DiaryCheck,
   },
   methods: {
     onCopy() {

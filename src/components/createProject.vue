@@ -72,15 +72,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in sampleData" :key="index">
+          <tr
+          v-for="(item, index) in addressBook"
+          :key="index"
+          class="group-item"
+        >
             <td>
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" />
               </div>
             </td>
-            <td>이정훈</td>
-            <td>사원</td>
-            <td>개발</td>
+            <td>{{ item.userName }}</td>
+            <td>{{ item.userGrade }}</td>
+          <td>{{ item.userDepartment }}</td>
           </tr>
         </tbody>
       </table>
@@ -92,6 +96,7 @@
 import Vue from "vue";
 import CKEditor from "ckeditor4-vue";
 import DiaryCheck from "../components/Tabs/DiaryCheck.vue";
+import axios from "axios";
 
 Vue.use(CKEditor);
 export default {
@@ -99,7 +104,7 @@ export default {
   components: { DiaryCheck },
   data() {
     return {
-      sampleData: [0, 1, 2, 3, 4, 5, 6],
+      addressBook: [], //주소록
       editorData: "",
       editorConfig: {
         // The configuration of the editor.
@@ -108,12 +113,39 @@ export default {
   },
   setup() {},
   created() {},
-  mounted() {},
+  mounted() {
+    const axiosToken = axios.create({
+      baseURL: process.env.VUE_APP_BASE_URL,
+      headers: {
+        Authorization: sessionStorage.token, // header의 속성
+      },
+    });
+    axiosToken
+      .get("/diary")
+      .then((response) => {
+        for (let i = 0; i < response.data.length; i++) {
+          this.addressBook.push({
+            userEmail: response.data[i].userEmail,
+            userName: response.data[i].userName,
+            userDepartment: response.data[i].userDepartment,
+            userPhoneNumber: response.data[i].userPhoneNumber,
+            userGrade: response.data[i].userGrade,
+          });
+        }
+        console.log(this.addressBook);
+      })
+      .catch((ex) => {
+        console.log("error");
+        console.log(ex);
+        return ex;
+      });
+  },
   unmounted() {},
   methods: {
     testCkeditor() {
       console.log(this.editorData);
     },
+
     //이미지 미리보기
     // readURL(input) {
     //   if (input.files && input.files[0]) {

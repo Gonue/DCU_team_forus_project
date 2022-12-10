@@ -127,6 +127,7 @@ export default {
         const BASE_URL = process.env.VUE_APP_BASE_URL;
         const submit = () => {
             axios.post(BASE_URL+"/user/login", state.form).then((res) => {
+              store.commit('setAccount', res.data);
                 sessionStorage.setItem("id", res.data);
                 sessionStorage.setItem("token", res.headers.authorization);
                 router.push({ path: "/" });

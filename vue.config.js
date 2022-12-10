@@ -22,7 +22,7 @@ module.exports = {
     port: 3000,
     proxy: {
       "/users": {
-        target: "http://15.165.74.173:8080",
+        target: "http://jlchj.iptime.org:8080",
         // changeOrigin: true,
         // pathRewrite: {
         //     '^/': ''

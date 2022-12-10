@@ -61,45 +61,8 @@
               <p>
                 {{ item.projectExplanation }}
               </p>
-
-              <img
-                src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                class="rounded-circle mr-1"
-                alt="Avatar"
-                width="28"
-                height="28"
-              />
-              <img
-                src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                class="rounded-circle mr-1"
-                alt="Avatar"
-                width="28"
-                height="28"
-              />
-              <img
-                src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                class="rounded-circle mr-1"
-                alt="Avatar"
-                width="28"
-                height="28"
-              />
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item px-4 pb-4">
-                <p class="mb-2 font-weight-bold">
-                  Progress <span class="float-right">65%</span>
-                </p>
-                <div class="progress progress-sm">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="65"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style="width: 65%"
-                  ></div>
-                </div>
-              </li>
             </ul>
           </div>
         </div>
@@ -186,6 +149,7 @@ export default {
   data() {
     return {
       projectList: [],
+      
       sampleData: "",
     };
   },

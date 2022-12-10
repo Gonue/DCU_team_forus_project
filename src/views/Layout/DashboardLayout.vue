@@ -3,15 +3,17 @@
     <notifications></notifications>
     <side-bar>
       <template slot="links">
+
+  
         <sidebar-item
           :link="{
             name: '프로젝트',
             path: '/projectmain',
             icon: 'ni ni-tv-2 text-primary',
           }"
+        
         >
         </sidebar-item>
-
         <sidebar-item
             :link="{
               name: '파일함',
@@ -114,7 +116,7 @@
   import DashboardNavbar from './DashboardNavbar.vue';
   import DashboardContent from './Content.vue';
   import { FadeTransition } from 'vue2-transitions';
-
+  import store from '../../routes/store';
   export default {
     components: {
       DashboardNavbar,
