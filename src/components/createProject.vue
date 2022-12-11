@@ -68,6 +68,7 @@ import CKEditor from "ckeditor4-vue";
 import DiaryCheck from "../components/Tabs/DiaryCheck.vue";
 import axios from "axios";
 import ButtonCheckbox from './ButtonCheckbox.vue';
+import router from '../routes/router';
 
 Vue.use(CKEditor);
 export default {
@@ -75,6 +76,8 @@ export default {
   components: { DiaryCheck, ButtonCheckbox },
   data() {
     return {
+      projectName:'',
+      projectExplantion:'',
       addressBook: [],//주소록
       files: [],
       image: '', 
@@ -134,6 +137,7 @@ export default {
       let projectData = {
         projectName: this.projectName,
         projectExplantion: this.projectExplantion,
+        userUuids: [],
       };
 
 
@@ -159,7 +163,7 @@ export default {
           data : formData
         }).then((res)=>{
           alert('프로젝트 생성완료');
-          navigate('/');
+          this.$router.go(this.$router.currentRoute);
         })
       
             

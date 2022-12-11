@@ -146,6 +146,7 @@ export default{
       sessionStorage.removeItem('id');
       sessionStorage.removeItem('token');
       sessionStorage.removeItem('profileImage');
+      sessionStorage.removeItem('grade');
       localStorage.removeItem('projectUuid');
       router.push('/login')
       

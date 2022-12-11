@@ -99,6 +99,7 @@
   import PerfectScrollbar from 'perfect-scrollbar';
   import 'perfect-scrollbar/css/perfect-scrollbar.css';
 
+
   function hasElement(className) {
     return document.getElementsByClassName(className).length > 0;
   }
@@ -124,6 +125,9 @@
       DashboardContent,
       FadeTransition
     },
+    data(){
+      
+    },
     methods: {
       initScrollbar() {
         let isWindows = navigator.platform.startsWith('Win');
@@ -132,7 +136,7 @@
         }
       },
       isProject(){
-        if(!localStorage.getItem('projectUuid')){
+        if(!sessionStorage.getItem('projectUuid')){
           return false
         }else{
           return true

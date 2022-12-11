@@ -18,7 +18,7 @@
           v-for="(item, index) in projectList"
           :key="index"
         >
-          <div class="card" @click="checkProject(item.projectUuid)">
+          <div class="card" @click="checkProject(item.projectUuid, item.projectName)">
             <img
               class="card-img-top"
               alt="Unsplash"
@@ -129,14 +129,14 @@
 import CreateProject from "./createProject.vue";
 import axios from "axios";
 import InviteProjectMembers from "./InviteProjectMembers.vue";
+import store from "../routes/store";
+
 export default {
   components: { CreateProject, InviteProjectMembers },
   data() {
     return {
-      projectName: '',
-      projectExplanation:'',
-      projectTitleImage:'',
-      projectList: [],
+      
+      projectList: [ ],
       sampleData: "",
     };
   },
@@ -152,6 +152,9 @@ export default {
     axiosToken
       .get("/project/join/list")
       .then((response) => {
+        if(response.data === '가입된 프로젝트가 없습니다.'){
+          return alert(response.data);
+        }else{
         for (let i = 0; i < response.data.length; i++) {
           this.projectList.push({
             projectUuid: response.data[i].projectUuid,
@@ -160,7 +163,8 @@ export default {
             projectTitleImage: response.data[i].projectTitleImage,
           });
         }
-        console.log(projectList);
+      }
+
       })
       .catch((ex) => {
         return ex;
@@ -168,9 +172,10 @@ export default {
   },
   unmounted() {},
   methods: {
-    checkProject(res){
+    checkProject(uuid,name){
       
-      sessionStorage.setItem('projectUuid',res);
+      sessionStorage.setItem('projectUuid',uuid);
+      
     }
   },
 };

@@ -54,7 +54,7 @@
       },
     });
     axiosToken
-      .get("/project/view/"+ localStorage.getItem('projectUuid'))
+      .get("/project/view/"+ sessionStorage.getItem('projectUuid'))
       .then((response) => {
         this.projectUuid = response.data.projectUuid;
         this.projectName = response.data.projectName;

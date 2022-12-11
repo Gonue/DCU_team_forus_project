@@ -10,7 +10,7 @@ export const store = new Vuex.Store({
                 id: 0,
                 token: sessionStorage.getItem('accTkn') || '',
             },
-            name: 'lee'
+            
         }
     },
     mutations: {

@@ -142,7 +142,7 @@ methods: {
               "calendarTitle" : title,
               "calendarStartDate" : selectInfo.startStr,
               "calendarEndDate" : selectInfo.endStr,
-              "projectUuid" : localStorage.getItem('projectUuid')
+              "projectUuid" : sessionStorage.getItem('projectUuid')
           })
           .then((response) => {
             console.log("calendarInsert ====== ", response);
