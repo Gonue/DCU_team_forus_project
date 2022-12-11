@@ -24,14 +24,14 @@
         name: ' 유저 관리',
         path: '/usermanage',
         icon: 'ni ni-single-02 text-dark'
-      }" >
+      }" v-if="isLoggined()">
       </sidebar-item>
 
       <sidebar-item :link="{
         name: ' 마이페이지',
         path: '/mypage',
         icon: 'ni ni-planet text-dark'
-      }" >
+      }" v-if="isLoggined()">
       </sidebar-item>
 
       <!-- <div>
@@ -54,19 +54,19 @@
       </sidebar-item>
     </li>
   </div> -->
-      <li class="nav-item">
-        <router-link to="/login" class="nav-link" v-if="true">Login</router-link>
-        <a class="nav-link" @click="logout()" v-else>LogOut</a>
+    <li class="nav-item">
+        <router-link to="/login" class="nav-link" v-if="!isLoggined()">로그인</router-link>
+        <a class="nav-link" v-else @click="logout">logout</a>
       </li>
 
-      <a href="#" class="nav-link pr-0" @click.prevent slot="title-container" >
+      <a href="#" class="nav-link pr-0" @click.prevent slot="title-container" v-if="isLoggined()">
         <b-media no-body class="align-items-center">
           <span class="avatar avatar-sm rounded-circle">
             <img alt="Image placeholder" src="img/theme/team-4.jpg">
           </span>
 
           <b-media-body class="ml-2 d-none d-lg-block">
-            <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+            <span class="mb-0 text-sm  font-weight-bold" >{{name}}</span>
           </b-media-body>
         </b-media>
       </a>
@@ -117,8 +117,12 @@ export default{
   data() {
     return {
       searchModalVisible: false,
-      searchQuery: ''
+      searchQuery: '',
+      name:''
     };
+  },
+  mounted(){
+    this.name = sessionStorage.getItem('nickname');
   },
   methods: {
     capitalizeFirstLetter(string) {
@@ -130,6 +134,22 @@ export default{
     closeDropDown() {
       this.activeNotifications = false;
     },
+    isLoggined(){
+      if (!sessionStorage.getItem('nickname')){
+        return false
+      }else{
+        return true
+      }
+    },
+    logout(){
+      sessionStorage.removeItem('nickname');
+      sessionStorage.removeItem('id');
+      sessionStorage.removeItem('token');
+      sessionStorage.removeItem('profileImage');
+      localStorage.removeItem('projectUuid');
+      router.push('/login')
+      
+    }
   }
 };
 </script>

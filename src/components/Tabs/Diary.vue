@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h4>주소록</h4>
 
     <input type="text" @input="searchGroup($event)" />
 

@@ -22,12 +22,33 @@
         <label for="formGroupExampleInput2" class="form-label">프로젝트 썸네일</label><br/>
         <input multiple @change='onInputImage' ref="serveyImage" type="file">
 
-      
+        <!-- <input type="file" name="files" class="form-control" id="formGroupExampleInput2" placeholder="이미지" /> -->
       </div>
-      
+      <!-- 사진 -->
+      <!-- 상품사진 -->
+      <!-- <div class="mb-3"><img id="preview" /></div>
+    <div class="mb-3">
+      <label for="file" class="form-label">상품대표이미지</label>
+      <input
+        type="file"
+        class="form-control"
+        name="file"
+        id="file"
+        onchange="readURL(this);"
+      />
+    </div> -->
+      <!-- 사진 끝 -->
       <div class="mb-3 mx-3">
         <label for="formGroupExampleInput2" class="form-label">프로젝트 담당자</label>
-        
+        <!-- <input
+        type="text"
+        class="form-control"
+        id="formGroupExampleInput2"
+        placeholder="프로젝트 담당자, 프로젝트 담당자
+        프로젝트 담당자, 프로젝트 담당자,프로젝트 담당자,프로젝트 담당자,프로젝트 담당자
+        "
+        disabled
+      /> -->
 
         <table class="table table-striped">
           <thead>
@@ -55,7 +76,9 @@
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             닫기
           </button>
-          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">생성</button>
+          <button type="submit" class="btn btn-primary"  data-bs-dismiss="modal">
+            <router-link to="/">생성</router-link>
+          </button>
         </div>
       </div>
     </form>
@@ -64,10 +87,9 @@
 
 <script>
 import Vue from "vue";
-import CKEditor from "ckeditor4-vue";
-import DiaryCheck from "../components/Tabs/DiaryCheck.vue";
 import axios from "axios";
-import ButtonCheckbox from './ButtonCheckbox.vue';
+import router from '../routes/router';
+
 
 Vue.use(CKEditor);
 export default {
@@ -143,10 +165,6 @@ export default {
       }));
 
       formData.append("image",this.image[0],"project.png");
-
-      console.log();
-      console.log(projectData.projectName);
-      console.log(projectData.projectExplantion);
 
       const BASE_URL = process.env.VUE_APP_BASE_URL;
         axios({

@@ -8,7 +8,7 @@
       expand="lg"
     >
       <div slot="brand" class="navbar-wrapper">
-        <b-navbar-brand to="/">
+        <b-navbar-brand to="/login">
           <img src="img/brand/logo.png">
         </b-navbar-brand>
       </div>
@@ -32,10 +32,10 @@
        <!-- 로긴 페이지-->
          <b-navbar-nav  class="align-items-lg-center ml-lg-auto">
           
-           <b-nav-item to="/login">
+           <!-- <b-nav-item to="/login">
                <i class="ni ni-key-25"></i>
                <span class="nav-link-inner--text">Login</span>
-           </b-nav-item>
+           </b-nav-item> -->
 
        </b-navbar-nav>
      </template>

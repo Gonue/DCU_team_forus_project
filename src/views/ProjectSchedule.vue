@@ -23,7 +23,7 @@
     :options='calendarOptions'
   >
     <template v-slot:eventContent='arg'>
-      <b>{{ arg.timeText }}</b>
+      <!-- <b>{{ arg.timeText }}</b> -->
       <i>{{ arg.event.title }}</i>
     </template>
   </FullCalendar>
@@ -97,7 +97,7 @@ data() {
       },
     });
     axiosToken
-      .get("/calendar/pj-d459ead7-92cb-42c5-a215-1dc6c793a0a2")
+      .get("/calendar/"+localStorage.getItem('projectUuid'))
       .then((response) => {
         console.log("session ====== ",  sessionStorage.token);
       
@@ -142,7 +142,7 @@ methods: {
               "calendarTitle" : title,
               "calendarStartDate" : selectInfo.startStr,
               "calendarEndDate" : selectInfo.endStr,
-              "projectUuid" : "pj-d459ead7-92cb-42c5-a215-1dc6c793a0a2"
+              "projectUuid" : localStorage.getItem('projectUuid')
           })
           .then((response) => {
             console.log("calendarInsert ====== ", response);
@@ -171,13 +171,7 @@ methods: {
         axiosToken
 
           .get("/calendar/delete/"+clickInfo.event.extendedProps.uuid)
-          // console.log(clickInfo.event)
-          // console.log(clickInfo.event.extendedProps)
-          // console.log(clickInfo.event.extendedProps.uuid)
-
-          // console.log("hi2"+ clickInfo.event.uuid)
-          // console.log("hi"+ clickInfo.event.title)
-         // .get("/calendar/delete/cl-7a0b9cdc-0e5b-42b4-8033-e8a35c41014d")
+        
           .then((response) => {
             console.log("calendarDelete ====== ", response);
             clickInfo.event.remove()

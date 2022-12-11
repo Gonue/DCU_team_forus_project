@@ -7,24 +7,21 @@
           >
             <div class="col-lg-6">
               <div class="about-text">
-                <h3 class="dark-color">Forus 프로젝트</h3>
-                <h4 class="theme-color">
-                  수리남 조 : 김석현, 이정훈, 황설현, 안재완
-                </h4>
+                <h3 class="dark-color">{{projectName}} 프로젝트</h3>
+              
                 <p>
-                  Forus 프로젝트는 30인 이하 협업 서비스입니다. Forus는 라틴어로
-                  벌집이라는 뜻 입니다.
-                </p>
-                <p>
-                  벌집처럼 Forus를 이용하여 튼튼한 프로젝트를 새워보면 좋겠습니다.
+                  {{projectExplanation}}
                 </p>
               </div>
             </div>
             <div class="col-lg-5 text-center">
               <div class="about-img">
                 <img
+                class="card-img-top"
+                alt="Unsplash"
                   width="315px"
-                  height="315px"
+                  height="315px" 
+                  :src="projectTitleImage"
                 />
               </div>
             </div>
@@ -35,16 +32,41 @@
   </template>
   
   <script>
+  import axios from "axios";
   export default {
     components: {},
     data() {
       return {
         sampleData: "",
+        projectUuid: "",
+        projectName: "",
+        projectExplanation : "",
+        projectTitleImage: "",
       };
     },
     setup() {},
     created() {},
-    mounted() {},
+    mounted() {
+    const axiosToken = axios.create({
+      baseURL: process.env.VUE_APP_BASE_URL,
+      headers: {
+        Authorization: sessionStorage.token, // header의 속성
+      },
+    });
+    axiosToken
+      .get("/project/view/"+ localStorage.getItem('projectUuid'))
+      .then((response) => {
+        this.projectUuid = response.data.projectUuid;
+        this.projectName = response.data.projectName;
+        this.projectExplanation= response.data.projectExplanation;
+        this.projectTitleImage= response.data.projectTitleImage;
+      })
+      .catch((ex) => {
+        console.log("error");
+        console.log(ex);
+        return ex;
+      });
+  },
     unmounted() {},
     methods: {},
   };

@@ -18,7 +18,7 @@
           v-for="(item, index) in projectList"
           :key="index"
         >
-          <div class="card">
+          <div class="card" @click="checkProject(item.projectUuid)">
             <img
               class="card-img-top"
               alt="Unsplash"
@@ -55,7 +55,7 @@
                 </div>
               </div>
               <h5 class="card-title mb-0">{{ item.projectName }}</h5>
-              <div class="badge bg-warning my-2">In progress</div>
+            
             </div>
             <div class="card-body px-4 pt-2">
               <p>
@@ -82,26 +82,11 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <!-- <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button> -->
+            
           </div>
           <div class="modal-body">
             <CreateProject />
           </div>
-          <!-- <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div> -->
         </div>
       </div>
     </div>
@@ -148,8 +133,10 @@ export default {
   components: { CreateProject, InviteProjectMembers },
   data() {
     return {
+      projectName: '',
+      projectExplanation:'',
+      projectTitleImage:'',
       projectList: [],
-      
       sampleData: "",
     };
   },
@@ -167,21 +154,25 @@ export default {
       .then((response) => {
         for (let i = 0; i < response.data.length; i++) {
           this.projectList.push({
+            projectUuid: response.data[i].projectUuid,
             projectName: response.data[i].projectName,
             projectExplanation: response.data[i].projectExplanation,
             projectTitleImage: response.data[i].projectTitleImage,
           });
         }
-        console.log(this.projectList);
+        console.log(projectList);
       })
       .catch((ex) => {
-        console.log("error");
-        console.log(ex);
         return ex;
       });
   },
   unmounted() {},
-  methods: {},
+  methods: {
+    checkProject(res){
+      
+      sessionStorage.setItem('projectUuid',res);
+    }
+  },
 };
 </script>
 
@@ -236,7 +227,6 @@ export default {
   background-color: #fff;
   border-bottom: 0 solid transparent;
 }
-
 .float-right {
   float: right !important;
 }

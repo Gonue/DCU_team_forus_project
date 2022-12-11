@@ -45,6 +45,7 @@
               }">
         </sidebar-item>
 
+        <div v-if="isProject()">
         <hr class="my-3" align="center" style="border: solid 0.3px grey; width: 80%;">
         <h6 align="center" class="navbar-heading text-muted">프로젝트</h6>
         <sidebar-item
@@ -75,7 +76,7 @@
                   icon: 'ni ni-collection text-red'
                 }">
         </sidebar-item>
-
+      </div>
 
 
       </template>
@@ -128,6 +129,13 @@
         let isWindows = navigator.platform.startsWith('Win');
         if (isWindows) {
           initScrollbar('sidenav');
+        }
+      },
+      isProject(){
+        if(!localStorage.getItem('projectUuid')){
+          return false
+        }else{
+          return true
         }
       }
     },

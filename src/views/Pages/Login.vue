@@ -131,6 +131,9 @@ export default {
               store.commit('setToken', res.data);
                 sessionStorage.setItem("id", res.data);
                 sessionStorage.setItem("token", res.headers.authorization);
+                sessionStorage.setItem("nickname", res.data.userName);
+                sessionStorage.setItem("profileImage", res.data.userProfileImage);
+                sessionStorage.setItem("grade", res.data.userGrade);
                 router.push({ path: "/" });
                 window.alert("로그인하였습니다.");
                 
