@@ -97,13 +97,14 @@ data() {
       },
     });
     axiosToken
-      .get("/calendar/pj-22d3c678-3497-43c9-86a1-08171faa4bac")
+      .get("/calendar/pj-d459ead7-92cb-42c5-a215-1dc6c793a0a2")
       .then((response) => {
         console.log("session ====== ",  sessionStorage.token);
       
         for (let i = 0; i <  response.data.length; i++) {
           var colorCode = "#" + Math.round(Math.random() * 0xffffff).toString(16);
           calData.push({
+              uuid   : response.data[i].calendarUuid,
               title  : response.data[i].calendarTitle,
               start  : response.data[i].calendarStartDate,
               end    : response.data[i].calendarEndDate,
@@ -141,7 +142,7 @@ methods: {
               "calendarTitle" : title,
               "calendarStartDate" : selectInfo.startStr,
               "calendarEndDate" : selectInfo.endStr,
-              "projectUuid" : "pj-22d3c678-3497-43c9-86a1-08171faa4bac"
+              "projectUuid" : "pj-d459ead7-92cb-42c5-a215-1dc6c793a0a2"
           })
           .then((response) => {
             console.log("calendarInsert ====== ", response);
@@ -168,11 +169,20 @@ methods: {
         },
         });
         axiosToken
-          .get("/calendar/delete/pj-22d3c678-3497-43c9-86a1-08171faa4bac")
+
+          .get("/calendar/delete/"+clickInfo.event.extendedProps.uuid)
+          // console.log(clickInfo.event)
+          // console.log(clickInfo.event.extendedProps)
+          // console.log(clickInfo.event.extendedProps.uuid)
+
+          // console.log("hi2"+ clickInfo.event.uuid)
+          // console.log("hi"+ clickInfo.event.title)
+         // .get("/calendar/delete/cl-7a0b9cdc-0e5b-42b4-8033-e8a35c41014d")
           .then((response) => {
             console.log("calendarDelete ====== ", response);
             clickInfo.event.remove()
           })
+          // `/calendar/delete/'${clickInfo.event.uuid}'`
           .catch((ex) => {
             console.log("error");
             return ex;

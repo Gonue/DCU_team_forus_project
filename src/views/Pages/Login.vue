@@ -128,6 +128,7 @@ export default {
         const submit = () => {
             axios.post(BASE_URL+"/user/login", state.form).then((res) => {
               store.commit('setAccount', res.data);
+              store.commit('setToken', res.data);
                 sessionStorage.setItem("id", res.data);
                 sessionStorage.setItem("token", res.headers.authorization);
                 router.push({ path: "/" });
